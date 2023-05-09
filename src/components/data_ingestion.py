@@ -37,10 +37,8 @@ class DataIngestion:
             
             logging.info("Ingestion of data is completed")
             
-            return(
-                self.ingestion_config.train_data_path,
-                self.ingestion_config.test_data_path
-            )
+            #this line may throw an error (NoneType), to fix just make a small change to the line and resave the file then run
+            return self.ingestion_config.train_data_path, self.ingestion_config.test_data_path
             
         except Exception as e:
             logging.info("Error occured in Data Ingestion config")
